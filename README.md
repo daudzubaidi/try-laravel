@@ -9,15 +9,17 @@
 
 ## git
 
-setup git
-git remote add origin https://github.com/daudzubaidi/try-laravel.git
-git branch -M main
-git push -u origin main
+### setup git
 
-klo gagal
-git remote set-url origin https://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@github.com/daudzubaidi/try-laravel
-git checkout -b main
-git push -u origin main
+-   git remote add origin https://github.com/daudzubaidi/try-laravel.git
+-   git branch -M main
+-   git push -u origin main
+
+### klo gagal
+
+-   git remote set-url origin https://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@github.com/daudzubaidi/try-laravel
+-   git checkout -b main
+-   git push -u origin main
 
 ## About Laravel
 
