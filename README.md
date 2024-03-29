@@ -7,19 +7,21 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## git
+## Git
 
-setup git
-git remote add origin https://github.com/daudzubaidi/try-laravel.git
-git branch -M main
-git push -u origin main
+### setup git
 
-klo gagal
-git remote set-url origin https://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@github.com/daudzubaidi/try-laravel
-git checkout -b main
-git push -u origin main
+-   git remote add origin https://github.com/daudzubaidi/try-laravel.git
+-   git branch -M main
+-   git push -u origin main
 
-## About Laravel
+### klo gagal
+
+-   git remote set-url origin https://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@github.com/daudzubaidi/try-laravel
+-   git checkout -b main
+-   git push -u origin main
+
+## Run Laravel
 
 setelah masuk project jalankan:
 
@@ -31,3 +33,34 @@ setelah masuk project jalankan:
 -   lalu akses halaman file di http://127.0.0.1:8000/
 
 (seharusnya halaman utama laravel akan terlihat)
+
+## Create API Customer
+
+Membuat API customers
+
+-   php artisan make:model Customer -m
+-   -   isi data CreateCustomersTable -> migration
+-   php artisan migrate
+-   -   isi data Customers -> Model
+
+-   php artisan make:controller Api/CustomerController --resource --api --model=Customer
+-   -   isi data CustomerController -> Controller
+
+routes/api.php
+
+-   use App\Http\Controllers\Api\CustomerController;
+-   Route::apiResource('customers', CustomerController::class);
+
+-   php artisan make:request CustomerRequest
+-   -   isi data CustomerRequest -> Request
+
+-   php artisan make:resource CustomerResource
+-   -   isi data CustomerResource -> Resources
+-   php artisan serve
+
+## Mengisi data customers
+
+-   php artisan make:seeder CustomerSeeder
+-   -   edit CustomerSeeder
+-   php artisan db:seed --class=CustomerSeeder
+-   -   lihat database car_rental => customers (menjadi terisi 5 data)
