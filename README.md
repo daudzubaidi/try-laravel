@@ -56,5 +56,11 @@ routes/api.php
 
 -   php artisan make:resource CustomerResource
 -   -   isi data CustomerResource -> Resources
+-   php artisan serve
 
-(seharusnya halaman utama laravel akan terlihat)
+## Mengisi data customers
+
+-   php artisan make:seeder CustomerSeeder
+-   -   edit CustomerSeeder
+-   php artisan db:seed --class=CustomerSeeder
+-   -   lihat database car_rental => customers (menjadi terisi 5 data)
